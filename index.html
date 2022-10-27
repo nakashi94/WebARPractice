@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>WebAR Practice</title>
+  <!-- A-Frameを読み込む -->
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <!-- AR.jsを読み込む -->
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+</head>
+<body style="margin: 0; overflow: hidden">
+  <a-scene embedded arjs vr-mode-ui="enabled: false">
+    <!-- 3Dモデルを読み込む -->
+    <a-assets>
+      <a-asset-item id="house" src="./assets/House_001_GLB.glb"></a-asset-item>
+    </a-assets>
+    
+    <!-- マーカーの.pattファイルを読み込む  -->
+    <a-marker type="pattern" url="./asset/pattern-My_WebARPractice.patt">
+      <!-- 3Dモデルを呼び出す -->
+      <a-entity gltf-model="#house"></a-entity>
+    </a-marker>
+    
+    <!-- カメラを追加 -->
+    <a-entity camera></a-entity>
+  </a-scene>
+</body>
+</html>
